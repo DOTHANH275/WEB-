@@ -1,0 +1,23 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
+<p class="mt-[120px] ml-[20px] font-medium text-[30px] mb-[20px]">
+  Sản phẩm: <strong class="text-red-500 underline">{{ keywords }}</strong>
+</p>
+
+<div
+  class="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mx-4"
+  *ngIf="productSearch.length > 0; else noProduct"
+>
+  <div *ngFor="let pro of productSearch">
+    <app-productone [productone]="pro"></app-productone>
+  </div>
+</div>
+<ng-template #noProduct>
+  <div class="flex justify-center text-red-500 font-semibold text-[15px]">
+    Sản phẩm không tồn tại
+  </div>
+</ng-template>
+
+<div class="mt-[200px]">
+  <app-footer></app-footer>
+</div>

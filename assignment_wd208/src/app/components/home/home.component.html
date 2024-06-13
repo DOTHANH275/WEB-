@@ -1,0 +1,476 @@
+<app-header />
+<div class="text-[#316887]">
+  <!-- banner -->
+  <div class="flex justify-between">
+    <div class="ml-[150px] mt-[50px]">
+      <p class="text-[42px] w-10 font-bold mb-8">Canon camera</p>
+      <div class="space-x-5">
+        <button
+          type="button"
+          class="font-semibold hover: hover:bg-white border hover:text-[#316887] hover:border-[#316887] text-white bg-[#EDA415] rounded-xl w-[130px] h-[50px] transition-all duration-300"
+        >
+          Shop now
+        </button>
+        <button
+          type="button"
+          class="font-semibold border border-[#316887] hover:border-none hover:text-white hover:bg-[#EDA415] rounded-xl w-[130px] h-[50px] transition-all duration-300"
+        >
+          View more
+        </button>
+      </div>
+    </div>
+
+    <div class="flex items-center mr-[130px] mt-8">
+      <img src="/assets/images/8 1.png" alt="" class="" />
+      <div
+        class="text-white font-semibold bg-[#EDA415] w-[120px] h-[120px] text-[21px] rounded-full mt-[145px] ml-[-85px] flex flex-col justify-center items-center"
+      >
+        <p class="m-0">only</p>
+        <p class="m-0">$89</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- san pham -->
+  <div class="flex justify-center space-x-12">
+    <div
+      class="w-[380px] h-[160px] flex items-center justify-center border border-gray-400 transition-all duration-300 hover:border-2 rounded-2xl space-x-10"
+    >
+      <img src="/assets/images/2 1.png" alt="" />
+      <div>
+        <p class="text-[23px] font-semibold">Speaker</p>
+        <p class="text-[18px]">(6 items)</p>
+      </div>
+    </div>
+    <div
+      class="w-[380px] h-[160px] flex items-center justify-center border border-gray-400 transition-all duration-300 hover:border-2 rounded-2xl space-x-10"
+    >
+      <img src="/assets/images/5 1.png" alt="" />
+      <div>
+        <p class="text-[23px] font-semibold">Desktop & laptop</p>
+        <p class="text-[18px]">(6 items)</p>
+      </div>
+    </div>
+    <div
+      class="w-[380px] h-[160px] flex items-center justify-center border border-gray-400 transition-all duration-300 hover:border-2 rounded-2xl space-x-10"
+    >
+      <img src="/assets/images/8 1.png" class="w-[100px]" />
+      <div>
+        <p class="text-[23px] font-semibold">DSLR camera</p>
+        <p class="text-[18px]">(6 items)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-center gap-[630px] mt-20">
+    <div class="text-[27px] font-semibold">Popular products</div>
+    <div class="flex space-x-4">
+      <div
+        class="border-2 transition-all duration-300 hover:border-[#316887] rounded-full py-1 px-6"
+      >
+        Cameras
+      </div>
+      <div
+        class="border-2 transition-all duration-300 hover:border-[#316887] rounded-full py-1 px-6"
+      >
+        Laptops
+      </div>
+      <div
+        class="border-2 transition-all duration-300 hover:border-[#316887] rounded-full py-1 px-6"
+      >
+        Tablets
+      </div>
+      <div
+        class="border-2 transition-all duration-300 hover:border-[#316887] rounded-full py-1 px-6"
+      >
+        Mouse
+      </div>
+    </div>
+  </div>
+
+  <!-- sanpham -->
+  <!-- 1 -->
+
+  <div class="flex justify-center">
+    <div class="grid grid-cols-4 mt-10 mb-20 max-w-[1300px] gap-10">
+      <div
+        class="product-container border-2 rounded-2xl w-[310px] h-[320px] pt-8 relative"
+        *ngFor="let product of products"
+      >
+        <div class="flex justify-center">
+          <div>
+            <div class="w-7 absolute pl-[220px]">
+              <div
+                class="bg-[#B3D4E5] w-7 h-7 rounded-full flex items-center justify-center"
+              >
+                <img
+                  src="/assets/images/heart2.png"
+                  alt=""
+                  class="pr-[1px] pt-[1px]"
+                />
+              </div>
+            </div>
+            <a href="product/{{ product.id }}">
+              <div>
+                <img src="{{ product.image }}" class="w-[260px] h-[160px]" />
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product Details -->
+        <div
+          class="product-details pl-3 pt-2 space-y-3 text-[17px] font-medium"
+        >
+          <div>{{ product.name }}</div>
+          <div>${{ product.price }}</div>
+          <div class="flex space-x-2">
+            <img src="/assets/images/star1.png" alt="" />
+            <img src="/assets/images/star1.png" alt="" />
+            <img src="/assets/images/star1.png" alt="" />
+            <img src="/assets/images/star1.png" alt="" />
+            <img src="/assets/images/star1.png" alt="" />
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="product-buttons flex mt-10 space-x-4">
+          <a href="cart">
+            <button
+              class="bg-[#87BCD9] w-[204px] h-[60px] text-black text-[15px] rounded-2xl font-semibold flex items-center justify-center space-x-14 ml-2 hover:border-2"
+            >
+              <div>Add to cart</div>
+              <div
+                class="w-7 h-7 bg-[#EDA415] rounded-full flex items-center justify-center"
+              >
+                <img src="/assets/images/shopping-cart.png" class="w-[18px]" />
+              </div>
+            </button>
+          </a>
+          <a href="product/{{ product.id }}">
+            <button
+              class="bg-[#87BCD9] w-[70px] h-[60px] text-black text-[15px] rounded-2xl font-semibold flex items-center justify-center space-x-10 hover:border-2"
+            >
+              <img src="/assets/images/eye.png" class="" />
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- banner2 -->
+  <div class="relative flex justify-center items-center mt-20">
+    <img src="/assets/images/laptop.png" alt="" />
+    <div class="absolute text-center space-y-8 pl-[720px]">
+      <button
+        type="button"
+        class="font-semibold transition-all duration-300 hover:bg-white border hover:border-[#316887] hover:text-[#316887] text-white bg-[#EDA415] border-none rounded-full w-[135px] h-[45px]"
+      >
+        New laptop
+      </button>
+      <div class="text-[#2E8FC5] font-bold text-[41px]">Sale up to 50% off</div>
+      <div class="text-white font-medium text-[18px]">12 inch hd display</div>
+      <button
+        type="button"
+        class="font-semibold transition-all duration-300 hover:bg-white border hover:border-[#316887] hover:text-[#316887] text-white border-none bg-[#EDA415] rounded-full w-[135px] h-[45px]"
+      >
+        Shop now
+      </button>
+    </div>
+  </div>
+
+  <!-- 3sp -->
+  <div class="flex justify-center space-x-6 mt-20">
+    <div
+      class="flex justify-center items-center border-2 rounded-2xl w-[800px] h-[500px]"
+    >
+      <div *ngFor="let product of products">
+        <div *ngIf="product.id == 8" class="flex">
+          <div><img src="{{ product.image }}" alt="" /></div>
+          <div
+            class="product-details pl-3 pt-2 space-y-3 text-[21px] font-medium"
+          >
+            <div>{{ product.name }}</div>
+            <div>${{ product.price }}</div>
+            <div class="flex space-x-2">
+              <img src="/assets/images/star1.png" alt="" />
+              <img src="/assets/images/star1.png" alt="" />
+              <img src="/assets/images/star1.png" alt="" />
+              <img src="/assets/images/star1.png" alt="" />
+              <img src="/assets/images/star1.png" alt="" />
+            </div>
+
+            <div
+              class="flex text-[#EDA415] text-[22px] font-bold space-x-2 pt-7 pb-7"
+            >
+              <div
+                class="w-[77px] hover:border hover:border-black h-[77px] bg-[#E2F4FF] rounded-full flex items-center justify-center"
+              >
+                67
+              </div>
+              <div
+                class="w-[77px] hover:border hover:border-black h-[77px] bg-[#E2F4FF] rounded-full flex items-center justify-center"
+              >
+                11
+              </div>
+              <div
+                class="w-[77px] hover:border hover:border-black h-[77px] bg-[#E2F4FF] rounded-full flex items-center justify-center"
+              >
+                22
+              </div>
+              <div
+                class="w-[77px] hover:border hover:border-black h-[77px] bg-[#E2F4FF] rounded-full flex items-center justify-center"
+              >
+                55
+              </div>
+            </div>
+
+            <div class="flex space-x-4">
+              <button
+                class="bg-[#87BCD9] w-[204px] h-[60px] text-black text-[15px] rounded-2xl font-semibold flex items-center justify-center space-x-14 hover:border-2"
+              >
+                <div>Add to cart</div>
+                <div
+                  class="w-7 h-7 bg-[#EDA415] rounded-full flex items-center justify-center"
+                >
+                  <img
+                    src="/assets/images/shopping-cart.png"
+                    class="w-[18px]"
+                  />
+                </div>
+              </button>
+              <button
+                class="bg-[#87BCD9] w-[70px] h-[60px] text-black text-[15px] rounded-2xl font-semibold flex items-center justify-center space-x-10 ml-2 hover:border-2"
+              >
+                <img src="/assets/images/eye.png" class="" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngFor="let product of products | slice : 0 : 1">
+      <div class="mb-6">
+        <div
+          class="border-2 rounded-2xl w-[505px] h-[237px] flex justify-center items-center"
+        >
+          <div><img src="{{ product.image }}" alt="" /></div>
+          <div class="pl-3 pt-2 space-y-3 text-[17px] font-medium">
+            <div>{{ product.name }}</div>
+            <div>${{ product.price }}</div>
+            <div class="flex space-x-2">
+              <img src="/assets/images/star1.png" alt="" />
+              <img src="/assets/images/star1.png" alt="" />
+              <img src="/assets/images/star1.png" alt="" />
+              <img src="/assets/images/star1.png" alt="" />
+              <img src="/assets/images/star1.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="border-2 rounded-2xl w-[505px] h-[237px] flex justify-center items-center"
+        >
+          <div><img src="{{ product.image }}" alt="" /></div>
+          <div class="pl-3 pt-2 space-y-3 text-[17px] font-medium">
+            <div>{{ product.name }}</div>
+            <div>${{ product.price }}</div>
+            <div class="flex space-x-2">
+              <img src="/assets/images/star1.png" alt="" />
+              <img src="/assets/images/star1.png" alt="" />
+              <img src="/assets/images/star1.png" alt="" />
+              <img src="/assets/images/star1.png" alt="" />
+              <img src="/assets/images/star1.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- bn nho -->
+
+  <div class="flex justify-center items-center mt-20">
+    <div
+      class="w-[1328px] h-[155px] bg-[#E2F4FF] rounded-2xl flex justify-center space-x-[160px]"
+    >
+      <div class="flex items-center">
+        <div><img src="/assets/images/box-tick.png" alt="" /></div>
+        <div>
+          <div class="text-[22px] font-semibold">Free delivery</div>
+          <div class="text-[18px]">on order above $50,00</div>
+        </div>
+      </div>
+
+      <div class="flex items-center">
+        <div><img src="/assets/images/crown.png" alt="" /></div>
+        <div>
+          <div class="text-[22px] font-semibold">Best quality</div>
+          <div class="text-[18px]">best quality in low price</div>
+        </div>
+      </div>
+
+      <div class="flex items-center">
+        <div><img src="/assets/images/shield-security.png" alt="" /></div>
+        <div>
+          <div class="text-[22px] font-semibold">1 year warranty</div>
+          <div class="text-[18px]">Avaliable warranty</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- binhluan -->
+
+  <div class="flex justify-center items-center space-x-4 mt-20">
+    <div class="w-[433px] border-2 rounded-2xl h-[242px] space-y-6">
+      <div class="flex items-center space-x-6 mt-5 ml-5">
+        <div
+          class="inline-block border-2 border-dashed border-[#EDA415] rounded-full p-1"
+        >
+          <img
+            src="/assets/images/myFace.png"
+            class="w-20 h-20 rounded-full"
+            alt="My Face"
+          />
+        </div>
+
+        <div>
+          <div>NGUYEN</div>
+        </div>
+      </div>
+      <div
+        class="w-[395px] h-[82px] bg-[#E2F4FF] rounded-2xl flex justify-center items-center text-[13px] p-5 ml-4"
+      >
+        Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus
+        bibendum ullamcorper. Phasellus tristique aenean at lorem sed
+        scelerisque.
+      </div>
+    </div>
+
+    <div class="w-[433px] border-2 rounded-2xl h-[242px] space-y-6">
+      <div class="flex items-center space-x-6 mt-5 ml-5">
+        <div
+          class="inline-block border-2 border-dashed border-[#EDA415] rounded-full p-1"
+        >
+          <img
+            src="/assets/images/face.jpg"
+            class="w-20 h-[82px] rounded-full"
+            alt="My Face"
+          />
+        </div>
+
+        <div>
+          <div>HUY</div>
+        </div>
+      </div>
+      <div
+        class="w-[395px] h-[82px] bg-[#E2F4FF] rounded-2xl flex justify-center items-center text-[13px] p-5 ml-4"
+      >
+        Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus
+        bibendum ullamcorper. Phasellus tristique aenean at lorem sed
+        scelerisque.
+      </div>
+    </div>
+
+    <div class="w-[433px] border-2 rounded-2xl h-[242px] space-y-6">
+      <div class="flex items-center space-x-6 mt-5 ml-5">
+        <div
+          class="inline-block border-2 border-dashed border-[#EDA415] rounded-full p-1"
+        >
+          <img
+            src="/assets/images/my2.jpg"
+            class="w-20 h-20 rounded-full"
+            alt="My Face"
+          />
+        </div>
+
+        <div>
+          <div>VINH</div>
+        </div>
+      </div>
+      <div
+        class="w-[395px] h-[82px] bg-[#E2F4FF] rounded-2xl flex justify-center items-center text-[13px] p-5 ml-4"
+      >
+        Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus
+        bibendum ullamcorper. Phasellus tristique aenean at lorem sed
+        scelerisque.
+      </div>
+    </div>
+  </div>
+
+  <!-- bn nho 2 -->
+
+  <div class="flex justify-center items-center mt-20">
+    <div
+      class="w-[1328px] h-[155px] bg-[#E2F4FF] rounded-2xl flex justify-center items-center space-x-[60px]"
+    >
+      <div><img src="/assets/images/brand-8.png" alt="" /></div>
+      <div><img src="/assets/images/brand-4.png" alt="" /></div>
+      <div><img src="/assets/images/brand-5.png" alt="" /></div>
+      <div><img src="/assets/images/brand-6.png" alt="" /></div>
+      <div><img src="/assets/images/brand-7.png" alt="" /></div>
+    </div>
+  </div>
+
+  <!-- sptb -->
+
+  <div class="flex justify-center items-center gap-[1130px] mt-20">
+    <p class="font-semibold text-[25px]">Latest news</p>
+    <p class="text-[20px]">View all</p>
+  </div>
+
+  <div class="flex justify-center items-center mt-20 space-x-7">
+    <div
+      class="w-[650px] h-[370px] border-2 rounded-2xl flex justify-center items-center space-x-6"
+    >
+      <div>
+        <img src="/assets/images/tainghe.png" alt="" />
+      </div>
+      <div class="space-y-7">
+        <div class="px-4 py-1 border-2 rounded-2xl text-[20px]">
+          22,oct,2021
+        </div>
+        <p class="w-[230px] text-[22px] font-semibold">
+          Who avoids a pain that produces?
+        </p>
+        <p class="w-[265px] text-[13px] font-semibold">
+          Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus
+          bibendum ullamcorper. Phasellus tristique aenean at lorem sed
+          scelerisque.
+        </p>
+        <p class="text-[13px] font-semibold">By spacing tech</p>
+      </div>
+    </div>
+    <div
+      class="w-[650px] h-[370px] border-2 rounded-2xl flex justify-center items-center space-x-6"
+    >
+      <div>
+        <img src="/assets/images/ke.png" alt="" />
+      </div>
+      <div class="space-y-7">
+        <div class="px-4 py-1 border-2 rounded-2xl text-[20px]">
+          22,oct,2021
+        </div>
+        <p class="w-[230px] text-[22px] font-semibold">
+          Who avoids a pain that produces?
+        </p>
+        <p class="w-[265px] text-[13px] font-semibold">
+          Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus
+          bibendum ullamcorper. Phasellus tristique aenean at lorem sed
+          scelerisque.
+        </p>
+        <p class="text-[13px] font-semibold">By spacing tech</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer />

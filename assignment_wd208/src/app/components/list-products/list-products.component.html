@@ -1,0 +1,60 @@
+<div class="w-[1200px] ml-[400px] pt-10 mt-7">
+  <div
+    class="flex justify-between items-center mb-10 px-6 py-6 rounded-lg bg-white border border-gray-500 text-[21px]"
+  >
+    <h2 class="font-bold">QUẢN LÍ SẢN PHẨM</h2>
+    <a
+      href="admin/products/add"
+      class="bg-gray-200 px-6 py-3 rounded-2xl border hover:bg-gray-300 hover:text-black"
+      >Thêm sản phẩm</a
+    >
+  </div>
+  <div class="pb-10 text-[19px]">
+    <table class="w-full bg-white border border-gray-300">
+      <thead>
+        <tr class="bg-gray-200 text-gray-700">
+          <th class="py-3 px-6 border border-gray-300">STT</th>
+          <th class="py-3 px-6 border border-gray-300">Tên sản phẩm</th>
+          <th class="py-3 px-6 border border-gray-300">Ảnh</th>
+          <th class="py-3 px-6 border border-gray-300">Giá sản phẩm</th>
+          <th class="py-3 px-6 border border-gray-300">Danh mục</th>
+          <th class="py-3 px-6 border border-gray-300">Mô tả</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-800">
+        <tr
+          class="border border-gray-300"
+          *ngFor="let product of products; index as i"
+        >
+          <td class="py-3 px-6 text-center border border-gray-300">{{ i }}</td>
+          <td class="py-3 px-6 border border-gray-300">{{ product.name }}</td>
+          <td class="py-3 px-6 text-center border border-gray-300">
+            <img src="{{ product.image }}" alt="" class="w-[150px]" />
+          </td>
+          <td class="py-3 px-6 text-center border border-gray-300">
+            {{ product.price }}
+          </td>
+          <td class="py-3 px-6 border border-gray-300">
+            {{ product.category }}
+          </td>
+          <td class="py-3 px-6 border border-gray-300">
+            {{ product.description }}
+          </td>
+          <td class="py-3 px-6 text-center border border-gray-300">
+            <a
+              href="admin/products/edit/{{ product.id }}"
+              class="text-indigo-600 hover:text-indigo-900"
+              >Sửa</a
+            >
+            <button
+              (click)="onDelete(product.id)"
+              class="text-red-600 hover:text-red-900 ml-4"
+            >
+              Xóa
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

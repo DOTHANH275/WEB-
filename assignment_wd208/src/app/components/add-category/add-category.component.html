@@ -1,0 +1,16 @@
+<div class="w-[1280px] ml-[370px] pt-10">
+  <form class="px-4 py-3 " [formGroup]="categoryForm" (ngSubmit)="onAdd()">
+    <div class=" p-4 rounded-lg mb-10">
+      <div class="flex justify-between items-center mb-10 px-6 py-10 rounded-lg bg-white border border-gray-500 text-[21px]">
+        <h2 class="font-bold">THÊM MỚI DANH MỤC</h2>
+      </div>      <div class="border p-6 text-[18px]">
+        <div class="mb-4 space-y-3 ">
+          <input type="text" id="name" class="w-full border border-gray-300 rounded-lg p-4 mb-4" formControlName="name" placeholder="Tên danh mục" />
+          <button type="submit" class="bg-gray-200 py-3 px-12 rounded-lg text-[19px] hover:bg-gray-300 text-black ">
+            Thêm Mới
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

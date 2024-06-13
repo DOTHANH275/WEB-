@@ -1,0 +1,190 @@
+<app-header />
+<!-- chitiet -->
+<div class="grid grid-cols-2 text-[18px]  ml-[190px] mt-20 mb-20 w-[1380px]">
+  <div>
+    <div class="border-2 w-[648px] mb-7 rounded-2xl h-[561px] flex items-center">
+      <img src="{{product.image}}" class="w-[648px] ">
+    </div>
+    <div class="flex gap-7">
+      @for (img of product.images; track img) {
+      <img (mouseover)="onChangeImg(img)" class="w-[310px] hover:cursor-pointer border-2 rounded-2xl" src="{{img}}"
+        alt="">
+
+      }
+    </div>
+  </div>
+  <div class="space-y-7 ">
+    <h1 class="text-[#003F62] text-[29px]">
+      {{product.name}}
+    </h1>
+    <p class="font-semibold text-[29px]">${{product.price}}</p>
+    <div class="flex items-center gap-2">
+      <img src="/assets/images/star.png" class="w-[29px] h-[29px]">
+      <img src="/assets/images/star.png" class="w-[29px] h-[29px]">
+      <img src="/assets/images/star.png" class="w-[29px] h-[29px]">
+      <img src="/assets/images/star.png" class="w-[29px] h-[29px]">
+      <img src="/assets/images/star.png" class="w-[29px] h-[29px]">
+      <p class="font-medium text-[13px] text-[#4A4A4A]">No reviews</p>
+    </div>
+    <div class="flex items-center gap-3">
+      <p class="text-[18px]">Availability:</p>
+      <img src="/assets/images/Vector.png" class="w-[20px] h-[13px]">
+      <p class="text-[#30BD57] text-[18px]">In stock</p>
+    </div>
+    <p class="text-[15px] text-[#5D5D5D]">Hurry up! only 34 product left in stock!</p>
+    <hr class="w-[618px] border-black">
+
+
+    <div class="flex items-center gap-4">
+      <p>Color:</p>
+      <button class="w-[15px] h-[15px] bg-[#565656] rounded-full "></button>
+    </div>
+    <div class="flex items-center gap-4">
+      <p>Size :</p>
+      <button
+        class="w-[63px] h-[32px] bg-[#EEEEEE] hover:border-black focus:border focus:border-black hover:border">30</button>
+      <button
+        class="w-[63px] h-[32px] bg-[#EEEEEE] hover:border-black focus:border focus:border-black hover:border">30</button>
+      <button
+        class="w-[63px] h-[32px] bg-[#EEEEEE] hover:border-black focus:border focus:border-black hover:border">30</button>
+      <button
+        class="w-[63px] h-[32px] bg-[#EEEEEE] hover:border-black focus:border focus:border-black hover:border">30</button>
+    </div>
+    <div class="flex items-center ">
+      <p>Quantity :</p>
+      <button
+        class="ml-4 w-[35px] h-[32px] bg-[#EEEEEE] hover:border-black hover:border border border-[#c9c9c9]">-</button>
+      <button class="w-[63px] h-[32px] bg-[#EEEEEE] hover:border-black hover:border border border-[#c9c9c9]">1</button>
+      <button class="w-[35px] h-[32px] bg-[#EEEEEE] hover:border-black hover:border border border-[#c9c9c9]">+</button>
+    </div>
+    <div class="flex items-center gap-6">
+      <a href="cart">
+      <button type="button"
+        class="font-semibold bg-[#EDA415] hover:bg-white border hover:border-[#316887] hover:text-[#316887] text-white  rounded-full w-[250px] h-[74px] transition-all duration-300 text-[22px] ">
+        Add to cart
+      </button>
+    </a>
+      <button type="button"
+        class="font-semibold bg-[#EDA415] hover:bg-white border hover:border-[#316887] hover:text-[#316887] text-white  rounded-full w-[250px] h-[74px] transition-all duration-300 text-[22px] ">
+        Buy it now
+      </button>
+      <button
+        class="bg-[#EEEEEE] w-[74px] h-[74px] rounded-full flex items-center justify-center hover:border hover:border-black focus:border focus:border-black">
+        <img src="/assets/images/traitim.png" alt="" class="pr-[1px] pt-[1px] w-[36px]">
+      </button>
+    </div>
+    <hr class="w-[618px] border-black">
+    <div class="text-[18px] space-y-6">
+      <div class="flex gap-3">
+        <p>Sku:</p>
+        <p>01133-9-9</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <p>Category:</p>
+        <p class="text-[13px]">20% off,</p>
+        <p class="text-[13px]">49% off</p>
+        <p class="text-[13px]">Alex remote</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <p>Share:</p>
+        <img src="assets/images/google.png" alt="">
+        <img src="assets/images/facebook.png" alt="">
+        <img src="assets/images/whatsapp.png" alt="">
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- nut -->
+<div class="flex justify-center gap-6">
+  <button type="button"
+    class="font-semibold  border border-[#316887] hover:border-none hover:text-white hover:bg-[#316887] rounded-xl w-[187px] h-[60px] transition-all duration-300">
+    Description
+  </button>
+  <button type="button"
+    class="font-semibold  border bg-[#316887] text-white  hover:text-[#316887]  hover:border-[#316887] hover:bg-white rounded-xl w-[187px] h-[60px] transition-all duration-300">
+    Reviews
+  </button>
+</div>
+<!-- bl -->
+<div class="flex justify-center mt-20 ">
+  <div class="border border-[#B8B8B8] w-[1314px] h-[223px] rounded-2xl">
+    <div class="pt-[40px] pl-20 space-y-4">
+      <div class="text-[#003F62] text-[22px] font-semibold">
+        Customer reviews
+      </div>
+      <div class="text-[#4F4F4F] text-[19px]">
+        No reviews yet
+      </div>
+      <button class="w-[196px] h-[40px] bg-[#003F62] text-white text-[19px] underline">
+        Write a review
+      </button>
+    </div>
+  </div>
+</div>
+<!-- sp -->
+<div>
+
+  <div>
+    <div class="font-semibold text-[27px] text-[#1B5A7D] pl-[190px] mt-10 mb-5">
+      Related product
+    </div>
+    <div class="flex justify-center">
+      <div class="grid grid-cols-4 mt-10 mb-20 max-w-[1310px] gap-10">
+        <div class="product-container border-2 rounded-2xl w-[310px] h-[320px] pt-8 relative"
+          *ngFor="let product of products ">
+          <div class="flex justify-center">
+            <div>
+              <div class="w-7 absolute pl-[220px] ">
+                <div class="bg-[#B3D4E5] w-7 h-7 rounded-full flex items-center justify-center">
+                  <img src="/assets/images/heart2.png" alt="" class="pr-[1px] pt-[1px]">
+                </div>
+              </div>
+              <a href="product/{{product.id}}">
+                <div>
+                  <img src="{{product.image}}" class="w-[260px] h-[160px]">
+                </div>
+              </a>
+
+            </div>
+          </div>
+
+          <!-- Product Details -->
+          <div class="product-details pl-3 pt-2 space-y-3 text-[17px] font-medium">
+            <div>{{product.name}}</div>
+            <div>${{product.price}}</div>
+            <div class="flex space-x-2">
+              <img src="/assets/images/star1.png" alt="">
+              <img src="/assets/images/star1.png" alt="">
+              <img src="/assets/images/star1.png" alt="">
+              <img src="/assets/images/star1.png" alt="">
+              <img src="/assets/images/star1.png" alt="">
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="product-buttons  flex mt-10 space-x-4">
+            <a href="cart">
+              <button
+                class="bg-[#87BCD9] w-[204px] h-[60px] text-black text-[15px] rounded-2xl font-semibold flex items-center justify-center space-x-14 ml-2 hover:border-2">
+                <div>Add to cart</div>
+                <div class="w-7 h-7 bg-[#EDA415] rounded-full flex items-center justify-center">
+                  <img src="/assets/images/shopping-cart.png" class="w-[18px]">
+                </div>
+              </button>
+            </a>
+            <a href="product/{{product.id}}">
+              <button
+                class="bg-[#87BCD9] w-[70px] h-[60px] text-black text-[15px] rounded-2xl font-semibold flex items-center justify-center space-x-10 hover:border-2">
+                <img src="/assets/images/eye.png" class="">
+              </button>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<app-footer />

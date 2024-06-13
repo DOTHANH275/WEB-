@@ -1,0 +1,52 @@
+<div class="w-[1280px] ml-[370px] pt-10 ">
+  <form class="px-4 py-3 " [formGroup]="productForm" (ngSubmit)="onAdd()">
+    <div class=" p-4 rounded-lg mb-10">
+      <div class="flex justify-between items-center mb-10 px-6 py-10 rounded-lg bg-white border border-gray-500 text-[21px]">
+        <h2 class="font-bold">THÊM MỚI SẢN PHẨM</h2>
+      </div>
+      <div class="border p-6 text-[18px] space-y-10">
+        <div class="mb-4">
+          <input type="text" id="name" class="w-full border border-gray-300 rounded-lg p-4" placeholder="Tên sản phẩm"
+            formControlName="name" />
+          <div class="text-red-500 mt-1"
+            *ngIf="productForm.controls.name.invalid && (productForm.controls.name.touched || productForm.controls.name.dirty)">
+            <div *ngIf="productForm.controls.name.errors?.['required']">Tên sản phẩm là bắt buộc.</div>
+          </div>
+        </div>
+        <div class="mb-4">
+          <input type="number" id="price" class="w-full border border-gray-300 rounded-lg p-4"
+            placeholder="Giá sản phẩm" formControlName="price" />
+          <div class="text-red-500 mt-1"
+            *ngIf="productForm.controls.price.invalid && (productForm.controls.price.touched || productForm.controls.price.dirty)">
+            <div *ngIf="productForm.controls.price.errors?.['required']">Giá sản phẩm là bắt buộc.</div>
+            <div *ngIf="productForm.controls.price.errors?.['min']">Giá sản phẩm không được nhỏ hơn 0.</div>
+          </div>
+        </div>
+        <div class="mb-4">
+          <input type="text" id="image" class="w-full border border-gray-300 rounded-lg p-4" placeholder="URL hình ảnh"
+            formControlName="image" />
+        </div>
+        <div class="mb-4">
+          <input type="text" id="description" class="w-full border border-gray-300 rounded-lg p-4" placeholder="Mô tả"
+            formControlName="description" />
+        </div>
+        <div class="mb-4">
+          <select id="category" class="w-full border border-gray-300 rounded-lg p-4" formControlName="category">
+            <option value="">Chọn thể loại</option>
+            <option *ngFor="let category of categories">{{ category.name }}</option>
+          </select>
+          <div
+            *ngIf="productForm.controls.category.invalid && (productForm.controls.category.touched || productForm.controls.category.dirty)"
+            class="text-red-500 mt-1">
+            <div *ngIf="productForm.controls.category.errors?.['required']">Thể loại là bắt buộc.</div>
+          </div>
+        </div>
+
+        <button type="submit" class="bg-gray-200 py-3 px-12 rounded-lg text-[19px] hover:bg-gray-300 text-black"
+          [disabled]="productForm.invalid">
+          Thêm Mới
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

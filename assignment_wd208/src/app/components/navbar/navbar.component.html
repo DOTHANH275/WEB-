@@ -1,0 +1,16 @@
+
+<div>
+  <ul class="flex space-x-4">
+    @for (menu of menus; track $index) {
+      <li *ngIf="menu.parent===0 ">
+        <a href="{{menu.path}}">{{menu.name}}</a>
+        <ul  class="submenu" *ngIf="checkMenu(menu.id)">
+          @for (submenu of menus; track $index) {
+            <li *ngIf="submenu.parent===menu.id">
+              <a href="{{submenu.path}}">{{submenu.name}}</a>
+          }
+        </ul>
+      </li>
+    }
+  </ul>
+</div>

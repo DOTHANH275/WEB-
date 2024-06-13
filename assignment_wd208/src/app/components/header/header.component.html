@@ -1,0 +1,88 @@
+<div class="text-[14px]">
+  <div class="w-full h-[100px] bg-[#003F62] flex items-center justify-between">
+    <div class="flex ml-[62px]">
+      <div class="mr-[100px]">
+        <a href="">
+          <img
+            src="assets/images/logo1.png"
+            alt="Logo"
+            class="w-auto h-full mr-[30px]"
+          />
+        </a>
+      </div>
+      <div
+        class="flex items-center bg-white text-[#003F62] w-[418px] rounded-[15px] overflow-hidden h-[50px]"
+      >
+        <form
+          class="boder boder-current"
+          method="post"
+          [formGroup]="searchForm"
+          (ngSubmit)="onSearch()"
+        >
+          <input
+            type="text "
+            class="w-[306px] h-[55px] px-9 rounded-s-2xl text-black"
+            placeholder="Search any things.."
+            formControlName="keywords"
+          />
+          <button
+            type="submit"
+            class="w-[132px] h-[56px] bg-[#EDA415] rounded-2xl text-white ml-[-25px]"
+          >
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="flex text-white pr-[60px] space-x-8">
+      <div class="flex space-x-4">
+        <img src="assets/images/user.png" alt="" />
+        <div>
+          <a href="" routerLink="/register" class="text-white">Sign In</a>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-1">
+          <img src="assets/images/heart.png" alt="" />
+          <div
+            class="bg-[#EDA415] text-[11px] w-4 h-4 flex items-center justify-center rounded-full"
+          >
+            0
+          </div>
+        </div>
+        <div>Sign in</div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-1">
+          <a href="cart"
+            ><img src="assets/images/shopping-cart.png" alt=""
+          /></a>
+          <div
+            class="bg-[#EDA415] text-[11px] w-4 h-4 flex items-center justify-center rounded-full"
+          >
+            0
+          </div>
+        </div>
+        <a href="cart">Cart</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="flex justify-between items-center text-[16px] bg-[#F4F4F4] h-[71px]"
+>
+  <div class="flex ml-[50px]">
+    @for (menu of menus; track $index) {
+    <li
+      class="inline-block pl-[25px] hover:bg-[#EDA415] hover:text-white p-[23px]"
+      *ngIf="menu.parent === 0"
+    >
+      <a href="{{ menu.path }}" class="pr-5 pl-2">{{ menu.name }}</a>
+    </li>
+    }
+  </div>
+
+  <div class="text-[#003F62] font-bold p-4 pr-[60px]">30 Days Free Return</div>
+</div>
